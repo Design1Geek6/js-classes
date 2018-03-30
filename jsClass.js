@@ -19,7 +19,7 @@ class BunWarmer {
 
     tempLevel(temp) {
         this.temp = temp
-        return this.temp + ' Degrees'
+        return this.temp + ' Degrees.'
     }
 
 }
@@ -28,10 +28,8 @@ class BunWarmer {
 
 class Fryer {
     switchPower() {
-        console.log('fryer Switch has Power', this.hasPower)
         this.hasPower = !this.hasPower
         return this.hasPower
-        console.log('fryer Switch Does Not Power', this.hasPower)
     }
 
     constructor(hasPower, message) {
@@ -40,14 +38,14 @@ class Fryer {
     }
 
 
-    instruction() {
+    display() {
         this.message
-        return this.message = 'Enjoy'
+        return this.message = 'You Turn Me On!'
     }
 }
 
 const bunWarmer = new BunWarmer(false, 150)
-const fryer = new Fryer(false, 'turn on')
+const fryer = new Fryer(false)
 
-console.log(bunWarmer.switchPower(), bunWarmer.tempLevel(300), fryer.switchPower(), fryer.instruction())
+console.log(fryer.display(), 'That is', bunWarmer.switchPower(), 'all the way to', bunWarmer.tempLevel(300), 'So', fryer.switchPower(),'it is... HOT! HOT! HOT!')
 
